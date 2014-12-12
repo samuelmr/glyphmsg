@@ -15,7 +15,7 @@
 <iframe id="preview" src="index.html?strong+message+now" style="width: 480px; height: 480px; background-color: #000"></iframe>
 </td></table>
 <script type="text/javascript">
- document.getElementById('msg').onkeyup=function() {
+ document.getElementById('msg').onchange=function() {
   var url = document.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?' +
             encodeURIComponent(this.value.replace('\n', '|').replace(' ', '+'));
   document.getElementById('preview').src = url;
