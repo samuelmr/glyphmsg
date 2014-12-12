@@ -69,7 +69,7 @@ gain success</textarea>
  msgt.onchange = showPreview;
  function showPreview() {
   var url = document.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?' +
-            encodeURIComponent(msgt.value.replace(/$/gm, '|').replace(/\s/g, '+'));
+            encodeURIComponent(msgt.value.replace(/$/gm, '|').replace(/ /g, '+'));
 	p.src = url;
     c.value = '<iframe src="' +
     url + '"></iframe>';
