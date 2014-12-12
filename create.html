@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <meta charset="UTF-8" />
 <title>Glyph message creator</title>
+<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+ background-color: #000;
+ color: rgb(17, 236, 247);
+ font-family: coda;
+ padding: 4em;
+}
+a {
+ color: rgb(17, 236, 247);
+}
+h1, caption {
+ text-align: center;
+ width: 95%;
+}
+table {
+ width: 100%;
+ min-width: 500px;
+}
+td {
+ padding: 1em 0 0 0;
+ width: 50%;
+}
+td[colspan="2"] {
+ width: 100%;
+}
+textarea {
+ width: 90%;
+}
+#preview {
+ height: 300px;
+ width: 95%;
+}
+p {
+ font-weight: 400;
+ margin: 0;
+}
+</style>
 <h1>Glyph message creator</h1>
 <table>
-<caption>Create your glyph messages with this easy tool.</caption>
+<caption>Create your glyph messages with this easy tool. Embed them to your blog, your e-mail signature etc. You can find available glyph words from <a href="http://www.ingress.tv/glyphs.html">ingress.tv</a>.</caption>
 <tr><td style="vertical-align: top";>
 <p>Write glyph words into the text area below.</p>
-<textarea id="msg" cols="40" rows="6">strong message now</textarea>
+<textarea id="msg" cols="40" rows="6">
+ignore fear
+see pure idea
+discover courage
+have clear message
+gain success</textarea>
 </td><td style="vertical-align: top";>
-<p>Copy and paste the url from below:</p>
-<textarea id="urli" cols="80" rows="6" readonly="readonly" /></textarea>
+<p>Copy and paste the code from below:</p>
+<textarea id="code" cols="80" rows="6" readonly="readonly" /></textarea>
 </tr><tr><td colspan="2">
 <p>You can see a preview below:</p>
-<iframe id="preview" src="index.html?strong+message+now" style="width: 480px; height: 480px; background-color: #000"></iframe>
+<iframe id="preview" src="index.html?strong+message+now"></iframe>
 </td></table>
 <script type="text/javascript">
- document.getElementById('msg').onchange=function() {
+ var msgt = document.getElementById('msg');
+ var p = document.getElementById('preview');
+ var c = document.getElementById('code');
+ msgt.onkeyup=function(e) {
+  if (e.keyCode == 20) {
+   showPreview();
+  }
+ }
+ msgt.onchange = showPreview;
+ function showPreview() {
   var url = document.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?' +
-            encodeURIComponent(this.value.replace('\n', '|').replace(' ', '+'));
-  document.getElementById('preview').src = url;
-  document.getElementById('urli').value = '<iframe src="' +
+            encodeURIComponent(msgt.value.replace(/$/gm, '|').replace(/\s/g, '+'));
+	p.src = url;
+    c.value = '<iframe src="' +
     url + '"></iframe>';
  }
- document.getElementById('msg').onkeyup();
+ showPreview();
 </script>
