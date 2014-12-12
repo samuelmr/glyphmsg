@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8" />
-<title>Glyph haikus</title>
+<title>Glyph message</title>
 <style type="text/css">
 body {
  background-color: transparent;
@@ -26,10 +26,10 @@ p.odd {
  var q = document.location.search;
  console.log(document.location);
  if (q && q.substr) {
-  q = q.substr(1); // remove leading ?
+  q = decodeURIComponent(q).substr(1); // remove leading ?
   var lines = q.split('|');
   for (var i=0; i<lines.length; i++) {
-   var words = lines[i].split('+');
+   var words = lines[i].split(/[^a-zA-Z_-]/);
    var p = document.createElement('p');
    p.className = (i%2) ? 'even' : 'odd';
    for (var j=0; j<words.length; j++) {
@@ -38,64 +38,10 @@ p.odd {
 	img.src = w + '.png';
 	img.alt = img.title = w.toUpperCase().replace(/[_-]/, ' ');
 	p.appendChild(img);
+    window.title += words.join(' ');
    }
    document.getElementById('poem').appendChild(p);
   }
  }
 </script>
 </body>
-
-<!--
-
-#journey+pure+nature|nourish+body+improve+mind|have+strong+resistance
-#create+idea|simple+powerful+message|open+potential
-#open_all+data|liberate+potential+truth|gain+evolution
-
-<div class="haiku">
-<p><img src="journey.png" alt="JOURNEY" /><img src="pure.png" alt="PURE" /><img src="nature.png" alt="NATURE" /></p>
-<p><img src="nourish.png" alt="NOURISH" /><img src="body.png" alt="BODY" /><img src="improve.png" alt="IMPROVE" /><img src="mind.png" alt="MIND" /></p>
-<p><img src="have.png" alt="HAVE" /><img src="strong.png" alt="STRONG" /><img src="resistance.png" alt="RESISTANCE" /></p>
-</div>
-
-JOURNEY PURE NATURE
-NURISH BODY, IMPROVE MIND
-HAVE STRONG RESISTANCE
-
-CREATE IDEA
-SIMPLE, POWERFUL MESSAGE
-OPEN POTENTIAL
-
-OPEN ALL DATA
-LIBERATE POTENTIAL TRUTH
-GAIN EVOLUTION
-
-
-
-
-
-
-
-
-FORGET PAST CONFLICT
-ACCEPT FUTURE POTENTIAL
-LIVE NOW
-
-
-
-
-
-
-
-
-GAIN ENLIGHTENMENT
-
-
-
-
-
-
-CHANGE
-ADAVANCE CREATIVITY
-DEFEND STRONG IDEA
-
--->
