@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8" />
 <title>Glyph message creator</title>
-<link href="//fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css">
 <style type="text/css">
 body {
  background-color: #000;
@@ -62,7 +62,7 @@ gain success</textarea>
  var p = document.getElementById('preview');
  var c = document.getElementById('code');
  msgt.onkeyup=function(e) {
-  if (e.keyCode == 20) {
+  if (e.keyCode == 9 || e.keyCode == 13 || e.keyCode == 32) {
    showPreview();
   }
  }
