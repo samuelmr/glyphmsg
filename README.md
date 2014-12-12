@@ -3,6 +3,8 @@ Glyph messages
 
 Create easy-to-embed messages using the glyphs from [Ingress](https://www.ingress.com/).
 
+The glyph images are from [ingress.tv](http://ingress.tv/glyphs.html)
+
 Examples
 --------
 [STRONG MESSAGE NOW](https://rawgithub.com/samuelmr/glyphmsg/master/index.html?strong+message+now)
