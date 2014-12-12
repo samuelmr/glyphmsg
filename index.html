@@ -33,13 +33,16 @@ p.odd {
    p.className = (i%2) ? 'even' : 'odd';
    for (var j=0; j<words.length; j++) {
     var w = words[j];
+    if (!w) {
+     continue;
+    }
     var img = document.createElement('img');
 	img.src = w + '.png';
 	img.alt = img.title = w.toUpperCase().replace(/[_-]/, ' ');
 	p.appendChild(img);
-    window.title += words.join(' ');
    }
    document.getElementById('poem').appendChild(p);
+   window.title += ' ' + words.join(' ');
   }
  }
 </script>
