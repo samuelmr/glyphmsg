@@ -38,12 +38,19 @@ p {
  font-weight: 400;
  margin: 0;
 }
+strong {
+ border: 1px solid orange;
+ display: inline-block;
+ margin: 0.1em;
+ font-weight: 400;
+ padding: 0 0.1em;
+}
 </style>
 <h1>Glyph message creator</h1>
 <table>
 <caption>Create your glyph messages with this easy tool. Embed them to your blog, your e-mail signature etc. You can find available glyph words from <a href="http://www.ingress.tv/glyphs.html">ingress.tv</a>.</caption>
 <tr><td style="vertical-align: top";>
-<p>Write glyph words into the text area below.</p>
+<p><strong>Write</strong> glyph words into the text area below.</p>
 <textarea id="msg" cols="40" rows="6">
 ignore fear
 see pure idea
@@ -51,10 +58,10 @@ discover courage
 have clear message
 gain success</textarea>
 </td><td style="vertical-align: top";>
-<p>Copy and paste the code from below:</p>
+<p><strong>Copy and paste</strong> the code from below:</p>
 <textarea id="code" cols="80" rows="6" readonly="readonly" /></textarea>
 </tr><tr><td colspan="2">
-<p>You can see a preview below:</p>
+<p>You can see a <strong>preview</strong> below:</p>
 <iframe id="preview" src="index.html?strong+message+now"></iframe>
 </td></table>
 <script type="text/javascript">
@@ -69,7 +76,7 @@ gain success</textarea>
  msgt.onchange = showPreview;
  function showPreview() {
   var url = document.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?' +
-            encodeURIComponent(msgt.value.replace(/$/gm, '|').replace(/ /g, '+'));
+            encodeURIComponent(msgt.value.replace(/(\r\n|\n|\r)/gm, '|'));
 	p.src = url;
     c.value = '<iframe src="' +
     url + '"></iframe>';
