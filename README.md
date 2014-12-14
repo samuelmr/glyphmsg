@@ -3,11 +3,13 @@ Glyph messages
 
 Create easy-to-embed messages using the glyphs from [Ingress](https://www.ingress.com/).
 
-The glyph images are from [ingress.tv](http://ingress.tv/glyphs.html)
+The glyph images are from [ingress.tv](http://ingress.tv/glyphs.html).
 
 Examples
 --------
 [STRONG MESSAGE NOW](https://rawgithub.com/samuelmr/glyphmsg/master/index.html?strong+message+now)
+
+[HAVE EASY JOURNEY<br>PURSUE SAFETY<br>SEARCH NEW BALANCE](https://rawgithub.com/samuelmr/glyphmsg/master/index.html?have+easy+journey|pursue+safety|search+new+balance)
 
 [JOURNEY PURE NATURE<br>NOURISH BODY, IMPROVE MIND<br>HAVE STRONG RESISTANCE](https://rawgithub.com/samuelmr/glyphmsg/master/index.html?journey+pure+nature|nourish+body+improve+mind|have+strong+resistance)
 
