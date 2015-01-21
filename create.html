@@ -60,26 +60,37 @@ gain success</textarea>
 </td><td style="vertical-align: top";>
 <p><strong>Copy and paste</strong> the code from below:</p>
 <textarea id="code" cols="80" rows="6" readonly="readonly" /></textarea>
+<p><input type="checkbox" id="mystify" /><label for="mystify">Hide readable words from URL</label></p>
 </tr><tr><td colspan="2">
 <p>You can see a <strong>preview</strong> below:</p>
 <iframe id="preview" src="index.html?strong+message+now"></iframe>
 </td></table>
 <script type="text/javascript">
- var msgt = document.getElementById('msg');
  var p = document.getElementById('preview');
  var c = document.getElementById('code');
+ var myst = document.getElementById('mystify');
+ myst.onchange = showPreview;
+ var msgt = document.getElementById('msg');
  msgt.onkeyup=function(e) {
   if (e.keyCode == 9 || e.keyCode == 13 || e.keyCode == 32) {
    showPreview();
   }
  }
  msgt.onchange = showPreview;
+ function URIEncode(string) {
+  var encoded = '';
+  for(var i=0; i<string.length; i++) {
+   encoded += '%' + parseInt(string.charCodeAt(i)).toString(16);
+  }
+  return encoded; 
+ }
  function showPreview() {
+  var encFunc = myst.checked ? URIEncode : encodeURIComponent;
   var url = document.location.href.replace(/\/[^\/]*$/, '/') + 'index.html?' +
-            encodeURIComponent(msgt.value.replace(/(\r\n|\n|\r)/gm, '|'));
-	p.src = url;
-    c.value = '<iframe src="' +
-    url + '"></iframe>';
+            encFunc(msgt.value.replace(/(\r\n|\n|\r)/gm, '|'));
+  p.src = url;
+  c.value = '<iframe src="' +
+  url + '"></iframe>';
  }
  showPreview();
 </script>
