@@ -23,27 +23,28 @@ p.odd {
 <body>
 <div id="poem"></div>
 <script type="text/javascript">
+ var lines = ['strong','message now'];
  var q = document.location.search;
  if (q && q.substr) {
   q = decodeURIComponent(q).substr(1); // remove leading ?
-  var lines = q.split('|');
-  for (var i=0; i<lines.length; i++) {
-   var words = lines[i].split(/[^a-zA-Z_-]/);
-   var p = document.createElement('p');
-   p.className = (i%2) ? 'even' : 'odd';
-   for (var j=0; j<words.length; j++) {
-    var w = words[j];
-    if (!w) {
-     continue;
-    }
-    var img = document.createElement('img');
-	img.src = w + '.png';
-	img.alt = img.title = w.toUpperCase().replace(/[_-]/, ' ');
-	p.appendChild(img);
+  lines = q.split('|');
+ }
+ for (var i=0; i<lines.length; i++) {
+  var words = lines[i].split(/[^a-zA-Z_-]/);
+  var p = document.createElement('p');
+  p.className = (i%2) ? 'even' : 'odd';
+  for (var j=0; j<words.length; j++) {
+   var w = words[j];
+   if (!w) {
+    continue;
    }
-   document.getElementById('poem').appendChild(p);
-   window.title += ' ' + words.join(' ');
+   var img = document.createElement('img');
+   img.src = w + '.png';
+   img.alt = img.title = w.toUpperCase().replace(/[_-]/, ' ');
+   p.appendChild(img);
   }
+  document.getElementById('poem').appendChild(p);
+  window.title += ' ' + words.join(' ');
  }
 </script>
 </body>
