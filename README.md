@@ -13,7 +13,7 @@ Examples
 
 [JOURNEY PURE NATURE<br>NOURISH BODY, IMPROVE MIND<br>HAVE STRONG RESISTANCE](https://samuelmr.github.io/glyphmsg/?journey+pure+nature|nourish+body+improve+mind|have+strong+resistance)
 
-[CREATE IDEA<br>SIMPLE, POWERFUL MESSAGE<br>OPEN POTENTIAL](https://samuelmr.github.io/glyphmsg/?create+idea|simple+powerful+message|open+potential)
+[CREATE IDEA<br>PERFECTION SIMPLE MESSAGE<br>OPEN POTENTIAL](https://samuelmr.github.io/glyphmsg/?create+idea|perfection+simple+message|open+potential)
 
 [OPEN ALL DATA<br>LIBERATE POTENTIAL TRUTH<br>GAIN EVOLUTION](https://samuelmr.github.io/glyphmsg/?open_all+data|liberate+potential+truth|gain+evolution)
 
