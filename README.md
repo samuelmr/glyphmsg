@@ -3,7 +3,7 @@ Glyph messages
 
 Create easy-to-embed messages using the glyphs from [Ingress](https://www.ingress.com/).
 
-The glyph images are from [ingress.tv](http://ingress.tv/glyphs.html). (Images and HTML files are stored in the `gh-pages` branch.)
+The glyph images are from [ingress.tv](http://ingress.tv/glyphs.html). (Images and HTML files are stored in the [gh-pages](tree/gh-pages) branch.)
 
 Examples
 --------
